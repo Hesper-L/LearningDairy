@@ -1,37 +1,4 @@
 # LearningDairy
-前端三要素
-HTML(结构）：超文本标记语言（Hyper Text Markup Language）,决定网页的结构和内容
-CSS（表现）：层叠样式表（Cascading Style Sheets）,设定网页的表现样式
-JavaScript（行为）：是一种弱类型脚本语言，其源代码不需要经过编译，而是由浏览器解释运行，用于控制网页的行为
-Day1 
-typora-(ctrl+,进入偏好设置)-通用-开启调试模式-可以在空白界面鼠标右键-检查元素-调取网页代码
-typora-a-(ctrl+,进入偏好设置)-外观-打开主题文件夹-切换不同主题的颜色（检查元素-写CSS代码color；默认是GitHub CSS）【typora可以自定义CSS，可以编写Html】
-typora-markdown拓展语法-内联、上下标、高亮、图表【重启typora生效】
-[最常用的Git命令]
-1.克隆代码-http地址（git clone https://github.com/Hesper-L/dev-tester.git) & -git地址(git clone git@github.com:Hesper-L/dev-tester.git)
-2.拉取代码-git pull
-3.切换分支-git checkout branch_name
-4.查看工作区状态-git status
-5.查看过往提交记录-git log
-6.提交到暂存区-git add
-7.提交到本地仓库-git commit -m"这里是提交注释"
-8.提交到远程仓库-git push
-[GitHub搜索技巧]
-1.按项目名称（name）查找-in:name dev-tester
-2.按项目描述（description）查找-in：description 测试开发面试资源
-3.按README描述查找-in：readme python面试题
-4.设置星星数（stars）查询范围-stars：>1000
-5.设置fork数（fork）查询范围-fork：>500
-6.按项目语言筛选-language：java
-7.按项目作者查找-user：Hesper-L
-8.按项目大小查找-size：>=500
-9.组合查找-in:name 测试开发 in:description 面试题 in：readme python stars:>50
-[GitHub下载加速]
-1.绑定Hosts(加速不明显)； 2.借助Gitee下载代码
-下载项目-文件夹-readme文件-git add可以把文件从工作区（文件夹属于工作区）提交到暂存区【仓库到GitHub】-git status可以看到状态改变-通过git commit到本地仓库-接着git push-刷新页面-编辑内容更新
- <!-- DOCTYPE:告诉浏览器，我们要使用什么规范 -->
- <! DOCTYPE html>
- 
  <!-- head标签代表网页头部-->
  <head>
      <!--meta描述性标签，它用来描述我们网站的一些信息-->
@@ -511,3 +478,214 @@ xj表未知量，aij称系数，bi称常数项。
 ###### 趋势线
 
 一条趋势线代表着时间序列数据的长期走势。它告诉我们一组特定数据（如GDP、石油价格和股票价格）是否在一段时期内增长或下降。虽然我们可以用肉眼观察数据点在坐标系的位置大体画出趋势线，更恰当的方法是利用线性回归计算出趋势线的位置和斜率。
+
+Day4
+## Matlab
+
+### 一 | 3类语句
+
+#### 01 | if 语句
+
+```matlab
+clear
+clc
+%已知A，求B
+A=6;
+if A>5
+    B=1;
+elseif A>0
+    B=2;
+else
+    B=3;
+end
+```
+
+我们使用if语句判断B到底应该等于几？
+
+![img](https://pic4.zhimg.com/v2-f4e55f3ac97e1273473d60d30676289b_b.jpg)
+
+<hr/>
+
+#### 02 | for语句
+
+```matlab
+clear
+clc
+% 求1到10的和
+T=0;
+for i=1:10
+    T=T+i;
+end
+```
+
+我们使用for语句再次求1到10的和。
+
+![img](https://pic1.zhimg.com/v2-252fe4043d39b33e18f30ac754ae23f4_b.jpg)
+
+<hr/>
+
+#### 03 | while语句
+
+```matlab
+clear
+clc
+% 求1到10的和
+T=0;
+i=1;
+while i<=10
+    T=T+i;
+    i=i+1;
+end
+```
+
+我们使用while语句再次求1到10的和。
+
+![img](https://pic3.zhimg.com/v2-e7945bb1a31cf412ff6d801d88f51c46_b.jpg)
+
+<hr/>
+
+### 二 | 6类函数
+
+#### 01 | zeros、ones
+
+```matlab
+clear
+clc
+%测试 zeros、ones
+A=zeros(3,4);
+B=ones(3,4);
+```
+
+我们使用zeros函数创建3行4列的零矩阵，使用ones函数创建3行4列的1矩阵。
+
+![img](https://pic2.zhimg.com/v2-1adf8234318cd95c4acbaedb13b16dc9_b.jpg)
+
+![img](https://pic4.zhimg.com/v2-65a42a13d3ca0df18110f29c8333457b_b.jpg)
+
+<hr/>
+
+#### 02 | size、length
+
+```matlab
+clear
+clc
+%测试 zeros、ones、size、length
+A=zeros(3,4);
+B=ones(3,4);
+[C,D]=size(A);
+E=[5 3 2 4];
+F=length(E);
+```
+
+我们使用size函数求矩阵A的行数和列数，使用length函数求数组E的长度。
+
+![img](https://pic3.zhimg.com/v2-74945ec47c2edb8a0a6681c6ae9e8b16_b.jpg)
+
+<hr/>
+
+#### 03 | max、min
+
+```matlab
+clear
+clc
+%测试 max、min、isempty
+E=[5 3 2 4];
+[maxValue,maxIndex]=max(E);
+[minValue,minIndex]=min(E);
+```
+
+我们使用max、min函数来求数组E中的最大值和最小值以及，最大值和最小值所在数组中的位置。数组E的最大值是5，在E中的第1个位置；数组E的最小值是2，在E中的第3个位置。
+
+![img](https://pic1.zhimg.com/v2-8a20432ebab610108a4fe00214ceed64_b.jpg)
+
+<hr/>
+
+#### 04 | isempty
+
+```matlab
+clear
+clc
+%测试 isempty
+X=[1,2;3,4];
+Y=isempty(X);
+```
+
+我们使用isempty函数来判断矩阵X是否为空，如果为空，则Y=1，如果不为空，则Y=0。
+
+![img](https://pic2.zhimg.com/v2-192317dec709f6c21da7f8b51a4790c5_b.jpg)
+
+<hr/>
+
+#### 05 | unique
+
+```matlab
+clear
+clc
+%测试unique
+A=[9 9 8 7 6 7 6 8 1 1 0];
+[B,C]=unique(A);
+```
+
+我们使用unique函数来删除数组中的重复元素，并将元素从小到大进行排序。B表示删除重复元素后从小到大元素的排列顺序，C表示B中每个元素在数组A中第一次出现的位置。
+
+![img](https://pic4.zhimg.com/v2-6ffbeadb85b6a98d8f649f7c28a083e7_b.jpg)
+
+<hr/>
+
+#### 06 | cell
+
+```matlab
+clear
+clc
+%测试cell
+A1=[1,2,3];
+A2=[4,5,6,7];
+A3=[8,9,10,11,12];
+A=cell(3,1);
+A{1,1}=A1;
+A{2,1}=A2;
+A{3,1}=A3;
+```
+
+我们使用cell函数创建元胞数组，用来储存不同长度的数组。
+
+![img](https://pic2.zhimg.com/v2-a88c0016b77f1920bef2d72a79049ccd_b.jpg)
+
+<hr/>
+
+### 三 | 2类语法
+
+#### 01 | 提取矩阵中某些元素
+
+```matlab
+clear
+clc
+%提取矩阵中某些元素
+A=[1,2,3,4,5;
+   6,7,8,9,10;
+   11,12,13,14,15;
+   16,17,18,19,20];
+row1=A(1,:);
+col1=A(:,1);
+B=A(2:3,3:4);
+```
+
+row1表示提取矩阵A的第一行，col1表示提取矩阵A的第一列，矩阵B表示提取矩阵A的第2至3行，且第3至4列的元素。
+
+![img](https://pic3.zhimg.com/v2-1322e13dc0b04b922679adb7f98a44fa_b.jpg)
+
+<hr/>
+
+#### 02 | 删除数组中某些元素
+
+```matlab
+clear
+clc
+%删除数组中某些元素
+A=[1,2,3,4,5,6,6,6,7];
+A(A==6)=[];
+```
+
+我们使用A(A==6)=[]将矩阵A中的元素6全部删除掉。
+
+![img](https://pic2.zhimg.com/v2-fde040388994c1ed67e1b6d946d08d25_b.jpg)

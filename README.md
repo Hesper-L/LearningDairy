@@ -898,3 +898,270 @@ vi / vim是Linux上最常用的文本编辑器而且功能非常强大。只有�
 **4.5 常用快捷键**
 
 ![img](https://pic3.zhimg.com/v2-959f561c6a6e4cda55e48a422bcc6002_b.jpg)
+
+
+# 数据库的相关概念：
+
+## 数据-data：
+
+1.描述事物的符号
+
+2.多种表现形式：文本，图形，音频，视频.
+
+
+
+## 数据库-Database,DB
+
+1.粮库，车库
+
+2.存放数据的仓库在计算机中，按照一定的格式存放，可为用户共享.
+
+
+
+## 数据库管理系统-Database Management System,DBAS
+
+1.在数据库管理系统基础上，使用数据库管理系统的语法，开发直接面对最终用户的应用程序
+
+2.学生管理系统，人事管理系统，图书管理系统.
+
+
+
+## 数据库管理员-Database Administrator,DBA
+
+1.数据库管理系统的操作者.
+
+
+
+最终用户：
+
+数据库应用系统的使用者.
+
+
+
+## 数据库管理系统(DBMS)
+
+1.DataBase Management System, 简称 DBMS, 用于科学的组织
+
+和存储数据, 高效快捷的管理和维护数据.
+
+
+
+## 数据库系统-Database System,DBS
+
+1.数据库+数据库管理系统+数据库应用系统+数据库管理员+最终用户.
+
+
+
+## 数据库法的发展阶段：
+
+1.网状数据库.
+
+2.层次数据库.
+
+3.关系数据库.
+
+
+
+## 关系数据库：
+
+采用关系（二维表）结构储存与管理数据.
+
+采用结构化查询（SQL）作为客户端程数据库服务器沟通的桥梁.
+
+目前主流的数据库技术.
+
+
+
+## 对象数据库：
+
+把面向对象的方法和数据库技术结合起来可以使数据库系统的分析，设计最大程序与人们对客观世界的认识相一致.
+
+![img](https://pic2.zhimg.com/v2-16866f5fb68d33a8116782dc08a9e791_b.jpg)
+
+## NOSQL数据库：
+
+Not Only SQL数据库泛指非关系数据库，如：Readis，MongoDB
+
+2.关系数据库在超大规模和高并发的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题.
+
+NOSQL数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，尤其是大数据应用难题.
+
+
+
+## 如何使用SQL plus连接Oracle：
+
+1.在开始菜单中,找到oracle11g-应用程序开发-SQL PLUS.双击SQL PLUS.
+
+2.弹出的SQL Plus框中,输入数据库实例的用户名和密码,按enter键.
+
+3.如果oracle服务器中装有多个数据库实例,则在用户名处输入:用户名/密码@数据库名称.如果数据库服务器不在本机上,还需要加上数据库服务器的地址:用户名/密码@IP地址/数据库名称.
+
+4.方法二:在开始-运行,输入cmd.弹出的黑色框中输入:sqlplus 用户名/密码@IP地址/数据库名称.
+
+
+
+## 如何使用命令连接Pracle SQL Plus：
+
+1.直接打开SQL Plus登录，需要用户名和密码
+
+​    开始->程序->Oracle->应用程序开发->sqlplus
+
+　　我的电脑是“开始”->“Oracle - OraDb11g_home1”->“应用程序开发”->“SQL Plus”
+
+　　数据库安装完成后，有两个系统级的用户：
+
+　　　　system    　默认密码:tiger
+
+　　　　sys          　默认密码:tiger
+
+2.进入cmd命令窗口，不使用用户名和密码
+
+　　（1）登录sqlplus/nolog
+
+　　（2）连接数据库：connect /as sysdba
+
+　　（3）修改用户密码(例：修改sys用户密码为123）：alter user sys identified by 123;
+
+注意有分号的地方不能省略，不然还会在输入后自动出现个“2”等待你继续输入。
+
+
+
+![img](https://pic2.zhimg.com/v2-363f5497e1880becaa8cf12d6e2d4fbd_b.jpg)
+
+# SQL语言基础 C
+
+## 什么是SQL语言：
+
+1.结构化查询语言（Structured Query Language）
+
+2.SQL是最重要的关系数据库操作语言，是所有关系数据库管理系统的标准语言.
+
+3.许多数据库厂商在使用SQL的同时，都对SQL进行了扩展，比如ORACLE的PL/SQL语言，MSSQL-Server的T-SQL语言.
+
+4.SQL语言是一种非过程化语言，只需要提出“做什么”，而不需要指明“怎么做”.
+
+
+
+## SQL可以做什么：
+
+1.数据库数据的增删改查操作(CRUD)
+
+2.数据库对象的创建，修改和删除操作.
+
+3.用户权限/角色的授予和取消.
+
+4.事务控制.
+
+
+
+## SQL语言的分类：
+
+DQL（数据查询语言）（要点）
+
+1.selet
+
+
+
+DML（数据操作语言）（要点）
+
+.insert,update,dalete
+
+
+
+DDL（数据定义语言）
+
+.create,alter,drop
+
+用于操作数据库对象
+
+
+
+DCL(数据控制语言)
+
+用于操作用户权限
+
+.grant,revoke
+
+
+
+TCL(事物控制语言)
+
+用于管理事务
+
+.SAVEPOINT,ROLLBACK,SET TRANSACTION,COMMIT
+
+2.数据操作语言针对表中的数据，而数据定义语言针对数据库对象（表，索引，视图，触发器，存储过程，函数，表空间等）
+
+
+
+select子句：
+
+select * from tab;
+
+查询所有表格-->*号的意思是表示所有的列，它是一个通配符./
+
+## Select子句的作用，主要如下：
+
+选择列表指出所查询列，它可以是一组列名列表、星号、表达式、变量，包括局部变量和全局变量等构成。
+
+1、选择所有列
+
+示例：显示test_table表中所有列的数据：SELECT * FROM test_table
+
+2、选择部分列并指定它们的显示次序
+
+查询结果集合中数据的排列顺序与选择列表中所指定的列名排列顺序相同。
+
+3、更改列标题
+
+在选择列表中，可重新指定列标题。
+
+定义格式为：列标题=列名 列名 列标题，如果指定的列标题不是标准的标识符格式时，应使用引号定界符
+
+例如，下列语句使用汉字显示列标题：SELECT 昵称=nickname，电子邮件=email FROM testtable
+
+4、删除重复行
+
+SELECT语句中使用ALL或DISTINCT选项来显示表中符合条件的所有行或删除其中重复的数据行，默认为ALL。
+
+使用DISTINCT选项时，对于所有重复的数据行在SELECT返回的结果集合中只保留一行。
+
+5、限制返回的行数
+
+使用TOP n [PERCENT]选项限制返回的数据行数，TOP n说明返回n行，而TOP n PERCENT时，说明n是表示一百分数，指定返回的行数等于总行数的百分之几。
+
+注：TOP命令仅针对SQL Server系列数据库，并不支持Oracle数据库。
+
+
+
+字符串连接符：||.
+
+Oracle当中，单引号用来表示字符串.
+
+如查询：所有员工的姓名，职业，薪资，以姓名：xxx,职位：xxx，薪资：xxx的形式显示.
+
+select '姓名：'||ename||',职业:'||job||',薪资:'||sal info form emp;
+
+
+
+order by子句：用于排序
+
+
+
+Distinct在SQL语句中的作用：
+
+DISTINCT 这个关键词的意思是用于返回唯一不同的值。
+
+在表中，可能会包含重复值。这并不成问题，不过，有时您也许希望仅仅列出不同（distinct）的值。SELECT DISTINCT 表示查询结果中，去掉了重复的行；Distinct表示去掉重复的行。
+
+sql语句中使用DISTINCT的注意事项：
+
+如果指定了 SELECT DISTINCT，那么 ORDER BY 子句中的项就必须出现在选择列表中，否则会出现错误。
+
+比如SQL语句：SELECT DISTINCT Company FROM Orders order by Company ASC是可以正常执行的。
+
+但是如果SQL语句是：SELECT DISTINCT Company FROM Orders order by Num ASC是不能正确执行的，在ASP中会提示“ORDER BY 子句与 (Num) DISTINCT 冲突”错误。
+
+SQL语句修改成：SELECT DISTINCT Company,Num FROM Orders order by Num ASC可以正常执行
+
+

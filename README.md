@@ -1164,4 +1164,60 @@ sql语句中使用DISTINCT的注意事项：
 
 SQL语句修改成：SELECT DISTINCT Company,Num FROM Orders order by Num ASC可以正常执行
 
+Day7
+先创建数据库
+
+```mysql
+ CREATE DATABASE shop;
+```
+
+创建表头
+
+```mysql
+CREATE TABLE Product
+(product_id    CHAR(4)       NOT NULL,
+product_name   VARCHAR(20)   NOT NULL,
+product_type   VARCHAR(20)   NOT NULL,
+sale_price     INTEGER       ,
+purchase_price INTEGER       ,
+regist_date    DATE          ,
+PRIMARY KEY    (product_id));
+```
+
+在表中插入数据
+
+```mysql
+INSERT INTO Product VALUES ('0001', 'T恤衫','衣服', 1000, 500, '2009-09-20');
+INSERT INTO Product VALUES ('0002', '打孔器',  '办公用品', 500, 320, '2009-09-11');
+INSERT INTO Product VALUES ('0003', '运动T恤', '衣服', 4000, 2800, NULL);
+INSERT INTO Product VALUES ('0004', '菜刀', '厨房用具',3000, 2800, '2009-09-20');
+INSERT INTO Product VALUES ('0005', '高压锅', '厨房用具',6800, 5000, '2009-01-15');
+INSERT INTO Product VALUES ('0006', '叉子', '厨房用具', 500, NULL, '2009-09-20');
+INSERT INTO Product VALUES ('0007', '擦菜板', '厨房用具', 880, 790, '2008-04-28');
+INSERT INTO Product VALUES ('0008',  '圆珠笔', '办公用品', 100, NULL, '2009-11-11');
+```
+
+删除表
+
+```mysql
+DROP TABLE Product;
+```
+
+给表添加列
+
+```mysql
+ALTER TABLE Product ADD COLUMN place_production VARCHAR(20);
+```
+
+删除列
+
+```mysql
+ALTER TABLE Product DROP COLUMN place_production;
+```
+
+变更表名
+
+```mysql
+RENAME TABLE Product to Good;
+```
 
